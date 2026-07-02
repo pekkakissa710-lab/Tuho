@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TUHO</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff;
+    color:#222;
+}
+
+header{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:linear-gradient(to bottom,#fff,#fff7ef);
+}
+
+h1{
+    font-size:clamp(100px,18vw,220px);
+    color:#ff6a00;
+    font-weight:900;
+    letter-spacing:8px;
+    line-height:1;
+}
+
+header p{
+    font-size:26px;
+    margin:20px 0 40px;
+    color:#555;
+}
+
+button{
+    background:#ff6a00;
+    color:white;
+    border:none;
+    padding:18px 42px;
+    font-size:18px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(255,106,0,.35);
+}
+
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+h2{
+    color:#ff6a00;
+    font-size:40px;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.card{
+    max-width:500px;
+    margin:auto;
+    background:white;
+    border:2px solid #ffe2cc;
+    border-radius:24px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    font-size:34px;
+    color:#ff6a00;
+}
+
+.card p{
+    margin-top:12px;
+    font-size:18px;
+    color:#666;
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(35px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:none;
+}
+
+footer{
+    margin-top:60px;
+    background:#ff6a00;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>TUHO</h1>
+    <p>Tutkitusti hyvä olo.</p>
+    <button>Osta nyt</button>
+</header>
+
+<section class="fade">
+    <h2>Maku</h2>
+
+    <div class="card">
+        <h3>🍊 Appelsiini Energy</h3>
+        <p>TUHO</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 TUHO
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>

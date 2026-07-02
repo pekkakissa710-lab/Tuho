@@ -129,10 +129,13 @@ footer{
 <header>
     <h1>TUHO</h1>
     <p>Tutkitusti hyvä olo.</p>
-    <button>Osta nyt</button>
+
+    <button onclick="document.getElementById('maut').scrollIntoView({behavior:'smooth'})">
+        Näytä maut
+    </button>
 </header>
 
-<section class="fade">
+<section id="maut" class="fade">
     <h2>Maku</h2>
 
     <div class="card">
